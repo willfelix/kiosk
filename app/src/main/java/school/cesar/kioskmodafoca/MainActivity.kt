@@ -26,6 +26,11 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
+        // Set the app into full screen mode
+        window.decorView.systemUiVisibility = flags
+
+        //Following code allow the app packages to lock task in true kiosk mode
+        setContentView(R.layout.activity_main)
 
         imageView.setOnClickListener {
             val i = Intent(this, DetailActivity::class.java)
@@ -36,13 +41,6 @@ class MainActivity : AppCompatActivity() {
             val i = Intent(this, DetailActivity::class.java)
             startActivity(i)
         }
-
-
-        // Set the app into full screen mode
-        window.decorView.systemUiVisibility = flags
-
-        //Following code allow the app packages to lock task in true kiosk mode
-        setContentView(R.layout.activity_main)
 
         // get policy manager
         val myDevicePolicyManager = getSystemService(Context.DEVICE_POLICY_SERVICE) as DevicePolicyManager
