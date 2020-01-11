@@ -7,6 +7,7 @@ import school.cesar.kioskmodafoca.receiver.MyAdmin
 import android.content.ComponentName
 import android.app.admin.DevicePolicyManager
 import android.content.Context
+import android.content.Intent
 import android.view.KeyEvent
 import android.view.View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY
 import android.view.View.SYSTEM_UI_FLAG_FULLSCREEN
@@ -15,6 +16,8 @@ import android.view.View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN
 import android.view.View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION
 import android.view.View.SYSTEM_UI_FLAG_LAYOUT_STABLE
 import android.media.AudioManager
+import kotlinx.android.synthetic.main.activity_main.*
+
 
 class MainActivity : AppCompatActivity() {
 
@@ -27,6 +30,17 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
+
+        imageView.setOnClickListener {
+            val i = Intent(this, DetailActivity::class.java)
+            startActivity(i)
+        }
+
+        textView.setOnClickListener {
+            val i = Intent(this, DetailActivity::class.java)
+            startActivity(i)
+        }
 
 
         // Set the app into full screen mode
